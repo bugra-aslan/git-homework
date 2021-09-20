@@ -34,6 +34,12 @@ public class Main {
         File programRunCounterFile = new File(programRunCounterFileName);
         int programRunCount = 0;
 
+        // These variables added for time measurement
+        long startTime;
+        long stopTime;
+        final double NANOS_PER_SEC = 1000000000.0;
+        // initiates the startTime variable using JVM's precise timing
+        startTime = System.nanoTime();
 
         try {
             if (!programRunCounterFile.createNewFile()) { // if file already exists will do nothing
@@ -57,6 +63,11 @@ public class Main {
             } else {
                 notInfiniteLoop();
             }
+
+            // initiates the stopTime variable using JVM's precise timing
+            stopTime = System.nanoTime();
+            // Prints the timing
+            System.out.println("elapsed time: " + ((stopTime - startTime) / NANOS_PER_SEC) + " seconds.");
 
         } catch (IOException e) {
             e.printStackTrace();
