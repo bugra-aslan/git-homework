@@ -34,7 +34,6 @@ public class Main {
         File programRunCounterFile = new File(programRunCounterFileName);
         int programRunCount = 0;
 
-
         try {
             if (!programRunCounterFile.createNewFile()) { // if file already exists will do nothing
                 log.trace("File name: {} opened", programRunCounterFile);
@@ -49,6 +48,12 @@ public class Main {
             PrintWriter printWriter = new PrintWriter(programRunCounterFileWriter);
             printWriter.printf("%d", ++programRunCount);
             printWriter.close();
+
+            // This loop is just created so that the version r2.5.5 is different from the r2.5.4
+            for (int i = 0; i < 3; i++){
+                System.out.println("This is the big change that we wanted to create a version called 2.5.5" +
+                        "And it iterates 3 times!!!");
+            }
 
             log.trace("The programRunCount before loops {}", programRunCount);
 
