@@ -17,8 +17,10 @@ public class Main {
         // Because of some numerical analysis and binary magic the double values are not stored exactly as they are
         // Hence other than (1/2) * c values are not exact so in this counter the i will never be equal to 0.3
         // This is a critical mistake so it is needed to be fixed in the version r2.5.4.1
-        for (double i = 0.0; i != 0.3; i += 0.1) {
-            System.err.println("This loop continues to infinity!!!!");
+//        for (double i = 0.0; i != 0.3; i += 0.1) {
+        for (int i = 0; i != 3; i++) {
+            System.err.println("This loop continues to infinity!!!! nooot anymooar");
+//            System.err.println("This loop continues to infinity!!!!");
         }
     }
 
